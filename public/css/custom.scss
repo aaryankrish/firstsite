@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css?family=Crimson+Pro&display=swap');
+
+$colors:(
+    main:#ea425c,
+    match:white,
+    match2:#2c3335,
+    match3:pink
+);
+@function colors($color){
+    @return  map-get($map:$colors,$key:$color);
+}
+
+/*HTML*/
+*{
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    ::selection{
+        background-color:  colors(match2);
+        color:  colors(match3);
+    }
+}
+
+/*Navbar*/
+
+#navbar{
+    background-color:  colors(match2);
+            .navbar-nav{
+                display: block;
+                text-transform: capitalize;
+                padding: 10px;
+                a:before {
+                    content: '​';
+                  }
+                a{
+                    color: colors(match);
+                    padding: 20px;
+                    transition: 0.4s ease-in;
+                    text-transform: capitalize;
+                }
+                a:hover{
+                    text-decoration: none;
+                    color: colors(main);
+                    font-weight: bold;
+                    transition: 0.4s ease-out;
+                }
+            }
+            .bar1,.bar2,.bar3{
+                width: 30px;
+                height: 4px;
+                margin: 6px 5px;
+                background: #fff ;
+                transition: all 0.5s ease;
+                cursor: pointer;
+            }
+            .change .bar1{
+                transform: rotate(-45deg)translate(-7px,6px);
+            }
+            .change .bar2{
+                opacity: 0;
+            }
+            .change .bar3{
+                transform: rotate(45deg)translate(-7px,-8px);
+            }
+
+            .navbar-brand{
+                    color:  colors(match)!important;
+                    font-family: 'Crimson Pro', serif;
+            }
+            .navbar-toggler{
+                border: 0;
+                outline: none;
+            }
+            
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-nav{
+        display: inline-block;
+    }
+}
+
+/*Banner*/
+
+.banner {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height:100vh;
+    clip-path: polygon(0 0, 100% 0, 100% 65%, 0 83%);
+    background-color: colors(main);
+    color:  colors(match);
+    text-align: center;
+    z-index: 1;
+    width:100%;
+    h1 {
+        font-weight: 300;
+      }
+      p {
+        font-weight: 250;
+      }
+      a{
+          background-color:  colors(match);
+          color: colors(main);
+          border-radius: 0 ;
+          text-decoration: none;
+          padding: 10px;
+      }
+  }
+
+/*Footer*/
+
+footer{
+    min-height: 10vh;
+    background: colors(match);
+    color: #000;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid colors(main);
+    ul{
+        li{
+            list-style-type: none;
+            display: inline-block;
+            padding: 10px;
+            a{
+                text-decoration: none;
+            }
+        }
+    }
+    .fa{
+        padding: 10px;
+        border-radius:3px;
+        color: colors(match);
+        background: colors(main);
+    }
+    .fa:hover{
+        background-color: colors(match);
+        color: colors(main);
+        transition: 0.4s ease;
+    }
+}
+
+ /*preloader*/
+ #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow: hidden;
+    background:colors(match);
+  }
+ #circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 150px;
+    height: 150px;  
+  }
+.loader {
+    width: calc(100% - 0px);
+    height: calc(100% - 0px);
+    border: 8px solid  colors(match3);
+    border-top: 8px solid colors(main);
+    border-radius: 50%;
+    animation: rotate 2s linear infinite;
+  }
+@keyframes rotate {
+    100% {transform: rotate(360deg);}
+  } 
+  
+/*Contact*/
+#contact-form{
+    background-color: colors(match);
+    padding: 40px 20px;
+    text-transform: capitalize;
+    padding: 30px;
+
+    h1{
+        color: colors(main);
+        text-align: center;
+    }
+    p{
+        text-align: center;
+        color: colors(match2);
+    }
+    .form{
+        padding: 10px;
+
+        label{
+            background-color:colors(main);
+            color: colors(match);
+            padding: 10px;
+            margin-bottom: -0.1px;
+            letter-spacing: 2px;
+            border-radius: 5px 5px 0  0;
+        }
+        input,textarea{
+            box-shadow:none!important;
+            margin-bottom: 10px;
+            border-radius: 0px;
+        }
+        input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {
+            padding-top: 3px;
+            //color: colors(pink);
+        }
+      
+        input[type=submit]{
+            background-color: colors(main);
+            color: colors(match);
+            border-radius: 15px;
+        }
+    }
+
+}
+
+
+/*NotFound*/ 
+
+#NotFound{
+    min-height: 50vh;
+    background-color: colors(match);
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    p{
+        a{
+            color: colors(main);
+        }
+        a:hover{
+            color: colors(main);
+            text-decoration: none;
+        }
+    }
+    
+}
+
+
+
+/*PARTS*/ 
+.parts{
+    padding: 20px;
+    h1{
+        color: colors(main);
+        text-align: center;
+    }    
+    p{
+        color: colors(match2);
+        strong{
+            color: colors(main);
+            text-transform: capitalize;
+        }
+    }
+    .btn{
+        background-color: colors(main);
+        color: colors(match);
+        a{
+            color: colors(match);
+        }
+        a:hover{
+            color: colors(match);
+            text-decoration: none;
+        }
+    }
+}
+
+/*PAGINATION*/ 
+
+
+    .pagination{
+        text-align: center!important;
+        color: colors(main);
+        overflow: scroll;
+        li{
+            a{text-align: center;}
+        }
+    }
