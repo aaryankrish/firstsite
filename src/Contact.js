@@ -6,7 +6,7 @@ const Contact = () => {
         <section className="container-fluid" id="contact-form">
         <h1>contact us</h1>
         <p>We are always here to help out whatever way we can.</p>
-        <form action="post" method="post" data-netlify className="form">
+        <form name="contact" method="POST" data-netlify="true" className="form">
             <label for="name">name <i class="fa fa-user"></i> </label>
             <input type="text" name="name" id="" className="form-control" placeholder="Name" required />
             <label for="email">email <i class="fa fa-envelope"></i> </label>
